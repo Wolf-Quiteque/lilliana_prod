@@ -17,6 +17,7 @@ async function migrate() {
 
   const localContent = readJson(path.join(ROOT, "data", "content-home.json"), defaultContent);
   await sql`INSERT INTO site_content (key, data) VALUES ('home', ${JSON.stringify(localContent)}::jsonb) ON CONFLICT (key) DO NOTHING`;
+  await sql`UPDATE site_content SET data = jsonb_set(data, '{site}', '{"text":{},"images":{}}'::jsonb, true), updated_at = NOW() WHERE key = 'home' AND NOT (data ? 'site')`;
 
   const localLeads = readJson(path.join(ROOT, "data", "submissions.json"), []);
   let migratedLeads = 0;

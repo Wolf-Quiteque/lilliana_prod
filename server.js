@@ -147,8 +147,8 @@ async function listMedia(res) {
 async function uploadMedia(req, res) {
   if (!R2.enabled) return sendJson(res, 503, { error: "R2 is not configured. Add the R2 variables to .env.local and restart the server." });
   const type = String(req.headers["content-type"] || "").split(";", 1)[0].toLowerCase();
-  const extensions = { "image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp", "image/gif": ".gif" };
-  if (!extensions[type]) return sendJson(res, 415, { error: "Use a JPG, PNG, WebP, or GIF image." });
+  const extensions = { "image/webp": ".webp" };
+  if (!extensions[type]) return sendJson(res, 415, { error: "Uploads must be optimized to WebP first." });
   const bytes = await readBuffer(req, 10 * 1024 * 1024);
   if (!bytes.length) return sendJson(res, 400, { error: "Choose an image to upload." });
   const key = `uploads/${new Date().toISOString().slice(0, 7)}/${crypto.randomUUID()}${extensions[type]}`;

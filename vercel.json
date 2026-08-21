@@ -5,6 +5,7 @@
     { "src": "index.html", "use": "@vercel/static" },
     { "src": "support.js", "use": "@vercel/static" },
     { "src": "admin/**", "use": "@vercel/static" },
+    { "src": "public/**", "use": "@vercel/static" },
     { "src": "assets/**", "use": "@vercel/static" }
   ],
   "routes": [

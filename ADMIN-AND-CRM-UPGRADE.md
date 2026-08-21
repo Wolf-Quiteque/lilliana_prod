@@ -38,6 +38,7 @@ The admin panel is deliberately scoped to the actual content model of this one-p
 - Packages — name, badge, price, CTA, and included items.
 - Testimonials — quote, person, and role.
 - Leads — view inquiry details and move a lead between `new`, `contacted`, `qualified`, `won`, `lost`, and `archived`.
+- Live edit — authenticated admins can enable **Edit live** on the public page, then use pencil controls for any leaf text and camera controls for every image. Changes are stored in the same CMS record and appear for visitors without a redeploy.
 
 Site chrome, layout, theme behavior, local video files, and social links remain code-owned. The current generated bundle makes free-form on-page editing a poor fit; changes to structural markup must happen in the Design Component source/export workflow, then be re-applied to the small CMS bridge in `index.html`.
 
@@ -51,6 +52,8 @@ Site chrome, layout, theme behavior, local video files, and social links remain 
 Without `DATABASE_URL`, first start creates the ignored `data/content-home.json` file from the tracked `data/default-content.json` seed and creates `data/submissions.json` after the first inquiry. When `DATABASE_URL` is set, local `server.js` uses the same Neon-backed API as Vercel instead.
 
 For R2, place `R2_ACCOUNT_ID`, `R2_BUCKET_NAME`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_PUBLIC_URL` in `.env.local`. `R2_ENDPOINT` is optional: it is derived from the account ID when omitted. The public URL must be the bucket’s enabled `r2.dev` URL or a custom domain, not the S3 API endpoint.
+
+All admin and live-editor image uploads are resized to a maximum 2400px edge and encoded as WebP (quality 84%) in the browser before upload. The API accepts WebP uploads only, which prevents unoptimized originals from being stored in R2.
 
 ## Security and operating rules
 

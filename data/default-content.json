@@ -17,6 +17,7 @@
     { "name": "Growth", "tag": "Most popular", "price": "$550", "cta": "Choose Growth", "bg": "color-mix(in oklab, var(--accent) 12%, var(--surface))", "border": "var(--accent)", "tagColor": "var(--accent)", "ctaBg": "var(--accent)", "ctaColor": "#fff", "items": ["Managed content across 2 platforms (Instagram & TikTok)", "12 high-performing pieces monthly, Reel-focused", "Active community management", "Content optimized for engagement, shares & saves", "2-hour content shoot monthly"] },
     { "name": "Expansion", "tag": "Full service", "price": "$1000", "cta": "Choose Expansion", "bg": "var(--surface)", "border": "var(--line)", "tagColor": "var(--muted)", "ctaBg": "transparent", "ctaColor": "var(--text)", "items": ["Managed content across 3 platforms (Instagram, Facebook, TikTok)", "20 premium pieces monthly, heavy Reel strategy", "Full-scale strategy for growth + conversions", "Ongoing audience interaction & response management", "Website design + ongoing maintenance", "2–3 hour professional shoot monthly"] }
   ],
+  "site": { "text": {}, "images": {} },
   "quotes": [
     { "text": "She took over our social completely and our phone started ringing within the first month. The content actually looks like our shop, not a stock photo.", "name": "Marisol R.", "role": "Owner, Bloom & Vine Florals" },
     { "text": "I never had time to post. Now I get 12 pieces a month, captions written, comments answered, and I don't lift a finger.", "name": "Andre W.", "role": "Founder, Westside Barbers" },

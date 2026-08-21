@@ -20,6 +20,7 @@ textarea { min-height:92px; resize:vertical; }
 .button.danger { border-color:rgba(239,100,97,.5); color:var(--danger); }
 .button.small { padding:7px 11px; font-size:13px; }
 .topbar { display:flex; align-items:center; justify-content:space-between; gap:18px; padding-bottom:22px; border-bottom:1px solid var(--line); }
+.header-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .nav { display:flex; flex-wrap:wrap; gap:8px; padding:22px 0; }
 .nav button { border:1px solid var(--line); border-radius:999px; padding:8px 13px; background:transparent; color:var(--muted); }
 .nav button.active { border-color:var(--accent); color:white; background:rgba(225,59,130,.16); }

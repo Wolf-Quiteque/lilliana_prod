@@ -210,6 +210,10 @@ document.addEventListener('DOMContentLoaded', async function() {
           })
           .catch((error) => this.setState({ submitError: error.message }));`
     );
+    template = template.replace(
+      '</head>',
+      '<script src="/public/image-upload.js"></script><script src="/public/cms-live.js" defer></script></head>'
+    );
 
     // Nested page bundles (iframe targets). Each ships ONCE, in the ROOT
     // document's manifest; frame srcs carry an about:blank#<uuid> marker
