@@ -1,0 +1,8 @@
+# `server.js` is only for local Node development. Vercel serves the site
+# statically and runs the Neon-backed API function in api/[...route].js.
+server.js
+scripts/
+.env
+.env.local
+data/content-home.json
+data/submissions.json

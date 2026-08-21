@@ -275,7 +275,8 @@ function getR2Config(fileEnv, processEnv) {
   return { enabled: Boolean(endpoint && bucket && accessKeyId && secretAccessKey && publicBaseUrl), endpoint, bucket, accessKeyId, secretAccessKey, publicBaseUrl };
 }
 
-// Vercel serves `api/[...route].js` as request-scoped functions. This local
-// development server must never start there: Vercel's deployed filesystem is
-// read-only and persistent state belongs in Neon instead.
-if (!process.env.VERCEL) main();
+// Vercel statically inspects this root file, so this export must be
+// unconditional. Locally, `node server.js` remains the only code path that
+// starts the listener.
+module.exports = route;
+if (require.main === module && !process.env.VERCEL) main();
