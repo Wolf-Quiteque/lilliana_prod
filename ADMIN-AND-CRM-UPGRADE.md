@@ -48,7 +48,7 @@ Site chrome, layout, theme behavior, local video files, and social links remain 
 3. Open `http://localhost:3000/` for the site and `http://localhost:3000/admin/` for the control panel.
 4. Sign in using the bootstrap credentials from `.env`.
 
-On first start, the service creates the ignored `data/content-home.json` file from the tracked `data/default-content.json` seed. It creates the ignored `data/submissions.json` file only after the first inquiry.
+Without `DATABASE_URL`, first start creates the ignored `data/content-home.json` file from the tracked `data/default-content.json` seed and creates `data/submissions.json` after the first inquiry. When `DATABASE_URL` is set, local `server.js` uses the same Neon-backed API as Vercel instead.
 
 For R2, place `R2_ACCOUNT_ID`, `R2_BUCKET_NAME`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_PUBLIC_URL` in `.env.local`. `R2_ENDPOINT` is optional: it is derived from the account ID when omitted. The public URL must be the bucket’s enabled `r2.dev` URL or a custom domain, not the S3 API endpoint.
 
@@ -64,7 +64,7 @@ For R2, place `R2_ACCOUNT_ID`, `R2_BUCKET_NAME`, `R2_ACCESS_KEY_ID`, `R2_SECRET_
 
 For a traditional Node host (a small VPS, Render, Railway, or a container host), deploy `server.js` with a persistent disk mounted for `data/`. Static-only cPanel/FTP hosting cannot execute it.
 
-For Vercel, the included `api/[...route].js` function replaces the local server and persists the CMS/CRM in Neon Postgres. Add `DATABASE_URL`, the three admin variables, and the R2 variables in Vercel Project Settings for Production, Preview, and Development. Provision Neon through Vercel’s Marketplace, which injects a `DATABASE_URL`, then deploy; the function creates its two tables automatically. Do not copy `.env.local` into the repository or deployment.
+For Vercel, the included `api/[...route].js` function replaces the local server and persists the CMS/CRM in Neon Postgres. `server.js` is intentionally disabled when the `VERCEL` environment variable is present. Add `DATABASE_URL`, the three admin variables, and the R2 variables in Vercel Project Settings for Production, Preview, and Development. Provision Neon through Vercel’s Marketplace, which injects a `DATABASE_URL`, then deploy; the function creates its two tables automatically. Do not copy `.env.local` into the repository or deployment.
 
 Before production, set the three required environment variables, configure a persistent data volume and HTTPS, confirm `/api/health`, submit a test inquiry, confirm it appears in `/admin/`, and remove the test lead.
 

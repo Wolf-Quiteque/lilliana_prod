@@ -14,6 +14,8 @@ const HOME_FILE = path.join(DATA_DIR, "content-home.json");
 const DEFAULT_HOME_FILE = path.join(DATA_DIR, "default-content.json");
 const SUBMISSIONS_FILE = path.join(DATA_DIR, "submissions.json");
 const env = { ...loadEnv(path.join(ROOT, ".env")), ...loadEnv(path.join(ROOT, ".env.local")) };
+Object.assign(process.env, env);
+const vercelApi = process.env.DATABASE_URL ? require("./api/[...route].js") : null;
 const PORT = Number(env.PORT || process.env.PORT || 3000);
 const ADMIN_EMAIL = env.ADMIN_EMAIL || process.env.ADMIN_EMAIL;
 const ADMIN_PASSWORD = env.ADMIN_PASSWORD || process.env.ADMIN_PASSWORD;
@@ -39,7 +41,7 @@ const MIME_TYPES = {
 };
 
 async function main() {
-  await ensureData();
+  if (!vercelApi) await ensureData();
   http.createServer(route).listen(PORT, () => {
     console.log(`Lillis Productions is running at http://localhost:${PORT}`);
   });
@@ -48,6 +50,7 @@ async function main() {
 async function route(req, res) {
   const url = new URL(req.url, `http://${req.headers.host || "localhost"}`);
   try {
+    if (vercelApi && url.pathname.startsWith("/api/")) return await vercelApi(req, res);
     if (url.pathname.startsWith("/api/")) return await api(req, res, url);
     return await serveStatic(req, res, url.pathname);
   } catch (error) {
@@ -272,4 +275,7 @@ function getR2Config(fileEnv, processEnv) {
   return { enabled: Boolean(endpoint && bucket && accessKeyId && secretAccessKey && publicBaseUrl), endpoint, bucket, accessKeyId, secretAccessKey, publicBaseUrl };
 }
 
-main();
+// Vercel serves `api/[...route].js` as request-scoped functions. This local
+// development server must never start there: Vercel's deployed filesystem is
+// read-only and persistent state belongs in Neon instead.
+if (!process.env.VERCEL) main();

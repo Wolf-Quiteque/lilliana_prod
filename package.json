@@ -5,7 +5,8 @@
   "description": "Lillis Productions site, content administration, and lead CRM",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "migrate:neon": "node scripts/migrate-to-neon.js"
   },
   "engines": {
     "node": ">=20"

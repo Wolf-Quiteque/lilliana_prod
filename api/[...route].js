@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
     const path = new URL(req.url, "https://lillis.local").pathname;
     if (req.method === "GET" && path === "/api/health") return await withDatabase(res, async (sql) => { await sql`SELECT 1`; send(res, 200, { ok: true, storage: "neon", media: Boolean(r2Config().enabled) }); });
     if (req.method === "POST" && path === "/api/auth/login") return await login(req, res);
-    if (req.method === "POST" && path === "/api/auth/logout") return logout(res);
+    if (req.method === "POST" && path === "/api/auth/logout") return logout(req, res);
     if (req.method === "GET" && path === "/api/auth/me") return requireAdmin(req, res, () => send(res, 200, { email: adminConfig().email }));
     if (req.method === "GET" && path === "/api/content/home") return await withDatabase(res, (sql) => getContent(sql, res));
     if (req.method === "PUT" && path === "/api/content/home") return await requireAdmin(req, res, () => withDatabase(res, (sql) => saveContent(req, sql, res)));
@@ -120,10 +120,10 @@ async function deleteMedia(res, encodedKey) {
 async function login(req, res) {
   const body = await jsonBody(req), admin = adminConfig();
   if (clean(body.email, 160).toLowerCase() !== admin.email || !verifyPassword(String(body.password || ""), admin.hash)) return send(res, 401, { error: "Invalid email or password." });
-  res.setHeader("Set-Cookie", `lp_admin=${signToken({ sub: admin.email, exp: Date.now() + 12 * 60 * 60 * 1000 })}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=43200`);
+  res.setHeader("Set-Cookie", `lp_admin=${signToken({ sub: admin.email, exp: Date.now() + 12 * 60 * 60 * 1000 })}; Path=/; HttpOnly;${secureCookie(req)} SameSite=Strict; Max-Age=43200`);
   send(res, 200, { email: admin.email });
 }
-function logout(res) { res.setHeader("Set-Cookie", "lp_admin=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0"); send(res, 204); }
+function logout(req, res) { res.setHeader("Set-Cookie", `lp_admin=; Path=/; HttpOnly;${secureCookie(req)} SameSite=Strict; Max-Age=0`); send(res, 204); }
 function requireAdmin(req, res, next) { const token = parseCookies(req.headers.cookie || "").lp_admin; const claims = token && verifyToken(token), admin = adminConfig(); return claims?.sub === admin.email ? next() : send(res, 401, { error: "Sign in required." }); }
 function adminConfig() { if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD || !process.env.AUTH_SECRET || process.env.AUTH_SECRET.length < 32) throw new Error("Admin authentication is not configured."); const salt = crypto.createHash("sha256").update(process.env.AUTH_SECRET).digest("hex").slice(0, 32); return { email: process.env.ADMIN_EMAIL.trim().toLowerCase(), hash: `${salt}:${crypto.scryptSync(process.env.ADMIN_PASSWORD, salt, 64).toString("hex")}` }; }
 function r2Config() { const accountId = process.env.R2_ACCOUNT_ID || process.env.CLOUDFLARE_ACCOUNT_ID; const endpoint = process.env.R2_ENDPOINT || process.env.S3_ENDPOINT || (accountId ? `https://${accountId}.r2.cloudflarestorage.com` : ""); const bucket = process.env.R2_BUCKET_NAME || process.env.R2_BUCKET; const accessKeyId = process.env.R2_ACCESS_KEY_ID || process.env.AWS_ACCESS_KEY_ID; const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY || process.env.AWS_SECRET_ACCESS_KEY; const publicBaseUrl = String(process.env.R2_PUBLIC_URL || process.env.R2_PUBLIC_BASE_URL || process.env.R2_BUCKET_PUBLIC_URL || "").replace(/\/+$/, ""); const enabled = Boolean(endpoint && bucket && accessKeyId && secretAccessKey && publicBaseUrl); return { enabled, bucket, publicBaseUrl, client: enabled ? new S3Client({ region: "auto", endpoint, credentials: { accessKeyId, secretAccessKey } }) : null }; }
@@ -139,4 +139,5 @@ function signToken(payload) { const encoded = Buffer.from(JSON.stringify(payload
 function verifyToken(token) { const [encoded, signature] = token.split("."); if (!encoded || !signature) return null; const expected = crypto.createHmac("sha256", process.env.AUTH_SECRET).update(encoded).digest(), actual = Buffer.from(signature, "base64url"); if (actual.length !== expected.length || !crypto.timingSafeEqual(actual, expected)) return null; try { const claims = JSON.parse(Buffer.from(encoded, "base64url").toString("utf8")); return claims.exp > Date.now() ? claims : null; } catch { return null; } }
 function verifyPassword(password, stored) { const [salt, hash] = stored.split(":"), actual = crypto.scryptSync(password, salt, 64); return crypto.timingSafeEqual(actual, Buffer.from(hash, "hex")); }
 function parseCookies(header) { return Object.fromEntries(header.split(";").map((item) => item.trim().split(/=(.*)/s)).filter(([key]) => key).map(([key, value]) => [key, decodeURIComponent(value || "")])); }
+function secureCookie(req) { return process.env.VERCEL || req.headers["x-forwarded-proto"] === "https" ? " Secure;" : ""; }
 function send(res, status, body) { if (res.writableEnded) return; res.statusCode = status; if (status === 204) return res.end(); res.setHeader("Content-Type", "application/json; charset=utf-8"); res.setHeader("Cache-Control", "no-store"); res.setHeader("X-Content-Type-Options", "nosniff"); res.end(JSON.stringify(body)); }
