@@ -44,7 +44,7 @@ Site chrome, layout, theme behavior, local video files, and social links remain 
 ## Local setup and execution
 
 1. Copy `.env.example` to `.env` and set strong, unique values for `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `AUTH_SECRET`.
-2. Start with `node server.js` (or `npm.cmd run dev` on Windows PowerShell).
+2. Start with `node server.js` (or `npm.cmd run dev` on Windows PowerShell). The project intentionally has no `start` script so Vercel treats it as a static site plus `/api` functions, not as a long-running Node server.
 3. Open `http://localhost:3000/` for the site and `http://localhost:3000/admin/` for the control panel.
 4. Sign in using the bootstrap credentials from `.env`.
 
