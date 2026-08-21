@@ -64,7 +64,7 @@ For R2, place `R2_ACCOUNT_ID`, `R2_BUCKET_NAME`, `R2_ACCESS_KEY_ID`, `R2_SECRET_
 
 For a traditional Node host (a small VPS, Render, Railway, or a container host), deploy `server.js` with a persistent disk mounted for `data/`. Static-only cPanel/FTP hosting cannot execute it.
 
-For Vercel, the included `api/[...route].js` function replaces the local server and persists the CMS/CRM in Neon Postgres. `server.js` is intentionally disabled when the `VERCEL` environment variable is present. Add `DATABASE_URL`, the three admin variables, and the R2 variables in Vercel Project Settings for Production, Preview, and Development. Provision Neon through Vercel’s Marketplace, which injects a `DATABASE_URL`, then deploy; the function creates its two tables automatically. Do not copy `.env.local` into the repository or deployment.
+For Vercel, `vercel.json` explicitly deploys the static home page, admin files, assets, and the `api/[...route].js` function. That function replaces the local server and persists the CMS/CRM in Neon Postgres. Add `DATABASE_URL`, the three admin variables, and the R2 variables in Vercel Project Settings for Production, Preview, and Development. Provision Neon through Vercel’s Marketplace, which injects a `DATABASE_URL`, then deploy; the function creates its two tables automatically. Do not copy `.env.local` into the repository or deployment.
 
 Before production, set the three required environment variables, configure a persistent data volume and HTTPS, confirm `/api/health`, submit a test inquiry, confirm it appears in `/admin/`, and remove the test lead.
 

@@ -1,7 +1,14 @@
 {
-  "functions": {
-    "api/[...route].js": {
-      "maxDuration": 10
-    }
-  }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "builds": [
+    { "src": "api/[...route].js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "support.js", "use": "@vercel/static" },
+    { "src": "admin/**", "use": "@vercel/static" },
+    { "src": "assets/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/[...route].js" },
+    { "handle": "filesystem" }
+  ]
 }
