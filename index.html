@@ -170,6 +170,47 @@ document.addEventListener('DOMContentLoaded', async function() {
       socialLinks + '\n      <span style="font-size: 13.5px; color: var(--muted);">© 2026 Lillis Productions · Houston, TX</span>'
     );
 
+    // The exported Design Component owns the rendered home page. Keep the
+    // fallback content in that bundle, then layer the small same-origin CMS
+    // API over the repeating collections once the component mounts.
+    template = template.replace(
+      'state = { q: 0, sent: false, narrow: false, menuOpen: false };',
+      'state = { q: 0, sent: false, narrow: false, menuOpen: false, cms: null, submitError: "" };'
+    );
+    template = template.replace(
+      'this.mq.addEventListener("change", this.onMq);',
+      `this.mq.addEventListener("change", this.onMq);
+    fetch("/api/content/home")
+      .then((response) => response.ok ? response.json() : null)
+      .then((cms) => { if (cms) this.setState({ cms }); })
+      .catch(() => {});`
+    );
+    template = template.replace(
+      'const q = this.state.q % this.quotes.length;',
+      'const cms = this.state.cms || {};\n    const quotes = Array.isArray(cms.quotes) && cms.quotes.length ? cms.quotes : this.quotes;\n    const q = this.state.q % quotes.length;'
+    );
+    template = template.replace('services: [', 'services: cms.services || [');
+    template = template.replace('gallery: [', 'gallery: cms.gallery || [');
+    template = template.replace('packages: [', 'packages: cms.packages || [');
+    template = template.replace('quote: this.quotes[q],', 'quote: quotes[q],');
+    template = template.replace('quoteDots: this.quotes.map', 'quoteDots: quotes.map');
+    template = template.replace('this.quotes.length - 1', 'quotes.length - 1');
+    template = template.replace(
+      'formNote: this.state.sent ? "Opening your email app \\u2014 hit send and it lands in the Lillis inbox." : "Goes straight to the Lillis Productions inbox. No spam, ever.",',
+      'formNote: this.state.submitError || (this.state.sent ? "Thanks — your inquiry is in the Lillis inbox." : "Goes straight to the Lillis Productions inbox. No spam, ever."),'
+    );
+    template = template.replace(
+      /        const body = "Name: " \+ \(f\.get\("name"\) \|\| ""\) \+ "\\nEmail: "[\s\S]*?        this\.setState\(\{ sent: true \}\);/,
+      `        const payload = { name: f.get("name") || "", email: f.get("email") || "", business: f.get("business") || "", package: f.get("package") || "", message: f.get("message") || "", website: "" };
+        fetch("/api/submissions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+          .then(async (response) => {
+            if (!response.ok) throw new Error((await response.json().catch(() => ({}))).error || "We could not send your inquiry right now.");
+            this.setState({ sent: true, submitError: "" });
+            e.target.reset();
+          })
+          .catch((error) => this.setState({ submitError: error.message }));`
+    );
+
     // Nested page bundles (iframe targets). Each ships ONCE, in the ROOT
     // document's manifest; frame srcs carry an about:blank#<uuid> marker
     // instead of a substitutable uuid. Every document mints the blobs for

@@ -1,0 +1,25 @@
+{
+  "services": [
+    { "num": "01", "title": "Content Strategy", "body": "A monthly plan built on what your local audience is actually searching for and saving." },
+    { "num": "02", "title": "Reels & Short-Form", "body": "Scroll-stopping vertical video shot, edited and scheduled for maximum reach." },
+    { "num": "03", "title": "Photography", "body": "Monthly on-location shoots that give you a library of images you can reuse everywhere." },
+    { "num": "04", "title": "Community Management", "body": "Comments, DMs and reviews answered in your voice so no lead goes cold." },
+    { "num": "05", "title": "Local SEO & Hashtags", "body": "Captions, keywords and tags tuned so nearby customers find you first." },
+    { "num": "06", "title": "Website & Maintenance", "body": "A clean, fast single-page site to send every lead to — kept up to date for you." }
+  ],
+  "gallery": [
+    { "label": "brand story", "col": "span 1", "row": "span 1", "image": "assets/gallery-brand-shoot-v2.png", "alt": "A product stylist arranging unbranded bottles on a dark campaign set" },
+    { "label": "behind the scenes", "col": "span 1", "row": "span 1", "image": "assets/gallery-behind-scenes-v2.png", "alt": "A camera and lighting setup in a moody content studio" },
+    { "label": "campaign detail", "col": "span 1", "row": "span 1", "image": "assets/gallery-product-detail-v2.png", "alt": "Dark floral product styling with deep pink studio light" }
+  ],
+  "packages": [
+    { "name": "Presence", "tag": "Starter", "price": "$350", "cta": "Choose Presence", "bg": "var(--surface)", "border": "var(--line)", "tagColor": "var(--muted)", "ctaBg": "transparent", "ctaColor": "var(--text)", "items": ["Managed content across 1 platform (TikTok)", "6 strategic content pieces monthly", "Caption writing for reach + local discovery", "Hashtag & SEO optimization for your area", "Light engagement support (comments & DMs)", "1-hour content shoot monthly"] },
+    { "name": "Growth", "tag": "Most popular", "price": "$550", "cta": "Choose Growth", "bg": "color-mix(in oklab, var(--accent) 12%, var(--surface))", "border": "var(--accent)", "tagColor": "var(--accent)", "ctaBg": "var(--accent)", "ctaColor": "#fff", "items": ["Managed content across 2 platforms (Instagram & TikTok)", "12 high-performing pieces monthly, Reel-focused", "Active community management", "Content optimized for engagement, shares & saves", "2-hour content shoot monthly"] },
+    { "name": "Expansion", "tag": "Full service", "price": "$1000", "cta": "Choose Expansion", "bg": "var(--surface)", "border": "var(--line)", "tagColor": "var(--muted)", "ctaBg": "transparent", "ctaColor": "var(--text)", "items": ["Managed content across 3 platforms (Instagram, Facebook, TikTok)", "20 premium pieces monthly, heavy Reel strategy", "Full-scale strategy for growth + conversions", "Ongoing audience interaction & response management", "Website design + ongoing maintenance", "2–3 hour professional shoot monthly"] }
+  ],
+  "quotes": [
+    { "text": "She took over our social completely and our phone started ringing within the first month. The content actually looks like our shop, not a stock photo.", "name": "Marisol R.", "role": "Owner, Bloom & Vine Florals" },
+    { "text": "I never had time to post. Now I get 12 pieces a month, captions written, comments answered, and I don't lift a finger.", "name": "Andre W.", "role": "Founder, Westside Barbers" },
+    { "text": "Professional from the first call. The shoot day was fun, the edits were fast, and the Reels outperformed anything we'd made before.", "name": "Kayla T.", "role": "Manager, Cedar Row Cafe" }
+  ]
+}
