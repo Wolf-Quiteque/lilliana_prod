@@ -225,7 +225,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     const wrap = document.getElementById('__bundler_loading');
     if (!wrap) return;
     wrap.classList.add('__lp_done');
+    wrap.style.opacity = '0';               // inline beats anything → guaranteed fade
     await new Promise((r) => setTimeout(r, 520));
+    // Remove it entirely so the timecode ticker stops and nothing lingers.
+    try { if (wrap.parentNode) wrap.parentNode.removeChild(wrap); } catch (e) {}
   }
   function __lp_sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
   function __lp_var(name) {
@@ -662,7 +665,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     if (__lp_shellNode) {
       __lp_shellNode.classList.remove('__lp_done');
-      __lp_shellNode.style.opacity = '1';
+      // Do NOT set an inline opacity here — it would override the CSS
+      // .__lp_done { opacity: 0 } rule and trap the loader on screen forever.
+      __lp_shellNode.style.opacity = '';
       (document.body || document.documentElement).appendChild(__lp_shellNode);
       __lp_progress(0.9, 'Warming up studio...');
     }
@@ -727,7 +732,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Never let the preloader trap the user if the swap/boot pipeline fails.
     try {
       const __lp_rescue = document.getElementById('__bundler_loading');
-      if (__lp_rescue) __lp_rescue.classList.add('__lp_done');
+      if (__lp_rescue) {
+        __lp_rescue.classList.add('__lp_done');
+        __lp_rescue.style.opacity = '0';
+      }
     } catch (e) {}
   }
 });
