@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Lillis Productions favicon: simple black & white camera -->
+  <rect width="64" height="64" rx="14" fill="#0d0c0d"/>
+  <!-- viewfinder bump -->
+  <path d="M24 24 L27 17 h10 L40 24 Z" fill="#ffffff"/>
+  <!-- camera body -->
+  <rect x="10" y="24" width="44" height="28" rx="6" fill="#ffffff"/>
+  <!-- lens -->
+  <circle cx="32" cy="38" r="9.5" fill="#0d0c0d"/>
+  <circle cx="32" cy="38" r="5" fill="#ffffff"/>
+  <circle cx="32" cy="38" r="2.2" fill="#0d0c0d"/>
+  <!-- flash / shutter button -->
+  <circle cx="47" cy="30" r="2" fill="#0d0c0d"/>
+</svg>
