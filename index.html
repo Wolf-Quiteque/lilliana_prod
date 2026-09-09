@@ -9,7 +9,8 @@
     #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0d0c0d; z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
-
+  </style>
+  <style id="__lp_css">
     /* ------------------------------------------------------------------------
        Creative preloader — "on set": a 9:16 reel frame with a live REC /
        timecode, a spinning camera aperture around the LP monogram, a record
@@ -225,6 +226,43 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (!wrap) return;
     wrap.classList.add('__lp_done');
     await new Promise((r) => setTimeout(r, 520));
+  }
+  function __lp_sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
+  function __lp_var(name) {
+    try { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+    catch (e) { return ''; }
+  }
+  // True once the dc-runtime has mounted the page into #dc-root and the
+  // template's CSS variables are actually applied to <html>.
+  function __lp_rendered() {
+    const host = document.getElementById('dc-root');
+    if (!host || !host.children || host.children.length === 0) return false;
+    return __lp_var('--bg') !== '';
+  }
+  // Holds the preloader until the swapped-in page is genuinely interactive and
+  // styled (React mount, helmet CSS, custom fonts, images) — never an
+  // unstyled "boot" frame — with hard caps so it can never hang the site.
+  async function __lp_wait_ready() {
+    try {
+      if (document.fonts && document.fonts.ready) {
+        await Promise.race([document.fonts.ready, __lp_sleep(3000)]);
+      }
+    } catch (e) {}
+    const bootDeadline = Date.now() + 5000;
+    while (Date.now() < bootDeadline && !__lp_rendered()) await __lp_sleep(40);
+    const imageDeadline = Date.now() + 2500;
+    while (Date.now() < imageDeadline) {
+      let imagesDone = true;
+      for (const img of document.querySelectorAll('img')) {
+        if (!(img.complete || (typeof img.naturalWidth === 'number' && img.naturalWidth > 0))) {
+          imagesDone = false;
+          break;
+        }
+      }
+      if (imagesDone) break;
+      await __lp_sleep(40);
+    }
+    if (__lp_rendered()) await __lp_sleep(180);
   }
 
   const FONT_MIME = /^(font[/]|application[/](x-)?font-|application[/]vnd\.ms-fontobject)/i;
@@ -607,9 +645,27 @@ document.addEventListener('DOMContentLoaded', async function() {
     // DOMParser/replaceWith are inert per spec — re-create each with
     // createElement so they execute, awaiting onload for src scripts to
     // preserve ordering (React before ReactDOM before Babel before text/babel).
-    await __lp_complete();
+    // Keep the preloader (node + its CSS) so we can re-attach it over the
+    // fresh page and hide the boot frame (React mount, fonts, images).
+    const __lp_shellNode = document.getElementById('__bundler_loading');
+    const __lp_cssEl = document.getElementById('__lp_css');
+    const __lp_shellCss = __lp_cssEl ? __lp_cssEl.textContent : '';
+
     const doc = new DOMParser().parseFromString(template, 'text/html');
     document.documentElement.replaceWith(doc.documentElement);
+
+    // Re-attach the preloader above the new page until it is fully ready.
+    if (__lp_shellCss) {
+      const st = document.createElement('style');
+      st.textContent = __lp_shellCss;
+      (document.head || document.documentElement).appendChild(st);
+    }
+    if (__lp_shellNode) {
+      __lp_shellNode.classList.remove('__lp_done');
+      __lp_shellNode.style.opacity = '1';
+      (document.body || document.documentElement).appendChild(__lp_shellNode);
+      __lp_progress(0.9, 'Warming up studio...');
+    }
 
     // Resolve page-frame markers: mint this document's own blob for each
     // framed page — from local text when this is the root, otherwise by
@@ -659,9 +715,20 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
+
+    // Hold the preloader until the new page has truly rendered (React mount,
+    // helmet CSS variables, custom fonts, layout images) so the transition from
+    // loader to live site is seamless — no unstyled intermediate frame.
+    await __lp_wait_ready();
+    await __lp_complete();
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
     console.error('Bundle unpack error:', err);
+    // Never let the preloader trap the user if the swap/boot pipeline fails.
+    try {
+      const __lp_rescue = document.getElementById('__bundler_loading');
+      if (__lp_rescue) __lp_rescue.classList.add('__lp_done');
+    } catch (e) {}
   }
 });
 
