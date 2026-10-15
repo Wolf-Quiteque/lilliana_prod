@@ -313,20 +313,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     // than the temporary loading shell. TikTok needs a reasonably wide player,
     // so cards wrap instead of compressing their internal UI.
     const socialProof = `
-  <section id="videos" style="border-top: 1px solid var(--line); background: var(--bg); padding: clamp(60px, 9vw, 96px) 0;">
+  <section id="clients" style="border-top: 1px solid var(--line); background: var(--bg); padding: clamp(40px, 7vw, 72px) 0;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(18px, 5vw, 28px); display: flex; flex-direction: column; gap: 36px;">
-      <div style="display: flex; align-items: end; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
-        <div style="display: flex; flex-direction: column; gap: 14px;">
-          <span style="font-size: 12.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent);">See it in motion</span>
-          <h2 style="margin: 0; font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.02; letter-spacing: -.03em;">Recent TikTok work.</h2>
-        </div>
-        <p style="margin: 0; max-width: 410px; font-size: 16.5px; line-height: 1.6; color: var(--muted);">A responsive selection of short-form content created to stop the scroll and start the conversation.</p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 360px)); justify-content: center; gap: clamp(18px, 2.5vw, 28px); align-items: start;">
-        <iframe title="TikTok video from lashaciendas" src="https://www.tiktok.com/embed/v2/7664414851195849998" style="width: 100%; aspect-ratio: 9 / 16; min-height: 420px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface);" loading="lazy" allow="fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <iframe title="TikTok video from cacompany2018" src="https://www.tiktok.com/embed/v2/7640615264974884109" style="width: 100%; aspect-ratio: 9 / 16; min-height: 420px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface);" loading="lazy" allow="fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <iframe title="TikTok video from cacompany2018" src="https://www.tiktok.com/embed/v2/7663999884265114894" style="width: 100%; aspect-ratio: 9 / 16; min-height: 420px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface);" loading="lazy" allow="fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
       <aside aria-label="Local content collaboration" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--surface);">
         <div style="position: relative; min-height: 320px; overflow: hidden;">
           <img src="assets/client-local-v2.png" alt="A small business team reviewing freshly shot content together" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
@@ -340,35 +328,43 @@ document.addEventListener('DOMContentLoaded', async function() {
       </aside>
     </div>
   </section>`;
-    const heroVisual = `
-      <div style="position: relative; min-height: clamp(540px, 56vw, 650px); isolation: isolate;">
-        <div style="position: absolute; inset: 0 52px 96px 0; overflow: hidden; border: 1px solid var(--line); border-radius: clamp(24px, 4vw, 34px); background: var(--surface); box-shadow: 0 30px 80px rgba(0,0,0,.34);">
-          <img src="assets/hero-content-shoot.png" alt="A fictional social content shoot with a phone and camera" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(13,12,13,.76) 100%); pointer-events: none;"></div>
-          <div style="position: absolute; left: clamp(18px, 4vw, 28px); bottom: clamp(18px, 4vw, 28px); display: flex; align-items: center; gap: 10px; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;">
-            <span style="width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 7px color-mix(in oklab, var(--accent) 20%, transparent);"></span>
-            On set / Houston
-          </div>
-        </div>
-        <div style="position: absolute; right: 0; bottom: 112px; width: min(44%, 220px); aspect-ratio: 1; overflow: hidden; border: 7px solid var(--bg); border-radius: 24px; background: var(--surface); box-shadow: 0 24px 54px rgba(0,0,0,.4); transform: rotate(3deg);">
-          <img src="assets/hero-production-detail.png" alt="Camera, phone stabilizer and styling tools" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        </div>
-        <div style="position: absolute; top: 26px; right: 24px; width: 74px; height: 74px; border-radius: 50%; border: 1px solid color-mix(in oklab, var(--accent) 58%, transparent); background: color-mix(in oklab, var(--accent) 14%, transparent); backdrop-filter: blur(8px); display: grid; place-items: center; color: #fff; font-family: Archivo, sans-serif; font-size: 10px; font-weight: 700; line-height: 1.25; letter-spacing: .12em; text-align: center; text-transform: uppercase; transform: rotate(10deg);">Shoot<br>Edit<br>Post</div>
-        <div style="position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: var(--line); box-shadow: 0 18px 44px rgba(0,0,0,.24);">
-          <div style="min-width: 0; background: color-mix(in oklab, var(--surface) 92%, transparent); backdrop-filter: blur(14px); padding: 17px 10px; text-align: center;">
-            <span style="display: block; font-family: Archivo, sans-serif; font-size: clamp(25px, 3vw, 36px); font-weight: 700; line-height: 1;">20+</span>
-            <span style="display: block; margin-top: 6px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);">Pieces / mo</span>
-          </div>
-          <div style="min-width: 0; background: color-mix(in oklab, var(--surface) 92%, transparent); backdrop-filter: blur(14px); padding: 17px 10px; text-align: center;">
-            <span style="display: block; font-family: Archivo, sans-serif; font-size: clamp(25px, 3vw, 36px); font-weight: 700; line-height: 1;">3</span>
-            <span style="display: block; margin-top: 6px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);">Platforms</span>
-          </div>
-          <div style="min-width: 0; background: color-mix(in oklab, var(--surface) 92%, transparent); backdrop-filter: blur(14px); padding: 17px 10px; text-align: center;">
-            <span style="display: block; font-family: Archivo, sans-serif; font-size: clamp(25px, 3vw, 36px); font-weight: 700; line-height: 1;">48h</span>
-            <span style="display: block; margin-top: 6px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);">Reply time</span>
-          </div>
-        </div>
-       </div>`;
+    const heroReels = `
+      <div class="lp-reels" aria-label="Recent client TikTok videos">
+        <iframe title="TikTok video from lashaciendas" src="https://www.tiktok.com/embed/v2/7664414851195849998" style="border: 1px solid var(--line); border-radius: 18px; background: var(--surface);" loading="lazy" allow="fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe title="TikTok video from cacompany2018" src="https://www.tiktok.com/embed/v2/7640615264974884109" style="border: 1px solid var(--line); border-radius: 18px; background: var(--surface);" loading="lazy" allow="fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe title="TikTok video from cacompany2018" src="https://www.tiktok.com/embed/v2/7663999884265114894" style="border: 1px solid var(--line); border-radius: 18px; background: var(--surface);" loading="lazy" allow="fullscreen; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>`;
+    const meetLilli = `
+  <section id="meet" style="border-bottom: 1px solid var(--line); max-width: 1240px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(18px, 5vw, 28px);">
+    <div class="lp-meet">
+      <figure style="margin: 0; position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--line); border-radius: clamp(22px, 4vw, 30px); background: radial-gradient(circle at 30% 20%, color-mix(in oklab, var(--accent) 32%, var(--surface)) 0%, var(--surface) 70%);">
+        <span style="position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; color: var(--muted); font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Photo of Lilli<br>coming soon</span>
+        <!-- To add your photo: save it as assets/meet-lilli.jpg (portrait, about 1200x1500). It covers this placeholder automatically. -->
+        <img src="assets/meet-lilli.jpg" alt="Lilli, founder of Lillis Productions" onerror="this.remove()" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+      </figure>
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <span style="font-size: 12.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent);">About</span>
+        <h2 style="margin: 0; font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: clamp(30px, 4vw, 52px); line-height: 1.04; letter-spacing: -.03em;">Meet Lilli.</h2>
+        <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.65; color: var(--muted);">Add a short introduction here: who you are, where you are based, and why local businesses trust you with their content.</p>
+        <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.65; color: var(--muted);">A second short paragraph can say what it is like to work with you.</p>
+      </div>
+    </div>
+  </section>`;
+    const heroCss = `<style>
+  .lp-hero-grid { display: flex; flex-direction: column; gap: 24px; }
+  .lp-hero-copy { display: flex; flex-direction: column; gap: 18px; }
+  .lp-reels { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: clamp(18px, 5vw, 28px); -webkit-overflow-scrolling: touch; padding-bottom: 6px; margin: 0 calc(-1 * clamp(18px, 5vw, 28px)); padding-left: clamp(18px, 5vw, 28px); padding-right: clamp(18px, 5vw, 28px); }
+  .lp-reels iframe { flex: 0 0 min(62vw, 240px); width: min(62vw, 240px); aspect-ratio: 9 / 16; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); scroll-snap-align: start; }
+  .lp-meet { display: grid; gap: clamp(28px, 5vw, 64px); align-items: center; grid-template-columns: 1fr; }
+  .lp-meet figure { max-width: 420px; width: 100%; }
+  @media (min-width: 960px) {
+    .lp-hero-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); gap: 44px; align-items: center; }
+    .lp-reels { overflow: visible; margin: 0; padding: 0; }
+    .lp-reels iframe { flex: 1 1 0; min-width: 0; width: auto; }
+    .lp-meet { grid-template-columns: minmax(0, 420px) 1fr; }
+  }
+  </style>
+</head>`;
     const socialLinks = `
       <nav aria-label="Follow Lillis Productions" style="display: flex; align-items: center; gap: 10px;">
         <a href="https://www.facebook.com/share/1Bzp25G951/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Lillis Productions on Facebook" title="Facebook" style="width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text);" style-hover="border-color: var(--accent); background: var(--accent); color: #fff;">
@@ -380,8 +376,25 @@ document.addEventListener('DOMContentLoaded', async function() {
       </nav>`;
     template = template.replace(
       /<div style="display: flex; flex-wrap: wrap; gap: 22px 18px; padding-bottom: 8px;">[\s\S]*?\n    <\/div>\n  <\/section>/,
-      heroVisual + '\n    </div>\n  </section>'
+      heroReels + '\n    </div>\n  </section>'
     );
+    // Compact hero: smaller headline/copy/buttons so headline, CTAs and client
+    // work share the first screen (esp. on mobile).
+    const heroEdits = [
+      ['padding: clamp(56px, 9vw, 108px) clamp(18px, 5vw, 28px) clamp(48px, 7vw, 76px); max-width: 1240px;', 'padding: clamp(24px, 4vw, 56px) clamp(18px, 5vw, 28px) clamp(36px, 5vw, 56px); max-width: 1240px;'],
+      ['<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px 56px; align-items: end;">\n      <div style="display: flex; flex-direction: column; gap: 30px;">', '<div class="lp-hero-grid" style="position: relative;">\n      <div class="lp-hero-copy">'],
+      ['font-size: clamp(48px, 7.2vw, 104px); line-height: 0.94; letter-spacing: -0.02em;', 'font-size: clamp(28px, 3.6vw, 52px); line-height: 1.05; letter-spacing: -0.02em;'],
+      ['max-width: 560px; font-size: 18.5px; line-height: 1.62; color: var(--muted);', 'max-width: 520px; font-size: clamp(14.5px, 1.5vw, 16.5px); line-height: 1.55; color: var(--muted);'],
+      ['<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">\n          <a href="#contact" style="background: var(--accent); color: #fff; padding: 17px 30px;', '<div style="display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center;">\n          <a href="#contact" style="background: var(--accent); color: #fff; padding: 13px 24px;'],
+      ['border: 1px solid var(--line); color: var(--text); padding: 17px 30px; border-radius: 999px; font-weight: 500; font-size: 15px;', 'border: 1px solid var(--line); color: var(--text); padding: 13px 24px; border-radius: 999px; font-weight: 500; font-size: 15px;'],
+      ['color: var(--muted); font-size: 15px; padding: 17px 6px;', 'color: var(--muted); font-size: 15px; padding: 8px 0;'],
+    ];
+    for (const [from, to] of heroEdits) {
+      if (!template.includes(from)) console.warn('[hero] pattern not found:', from.slice(0, 60));
+      template = template.replace(from, to);
+    }
+    template = template.replace('</head>', heroCss);
+    template = template.replace('\n  <section id="services"', meetLilli + '\n\n  <section id="services"');
     template = template.replace(/gallery:\s*\[[\s\S]*?\n\s*\],\n\s*packages:/, `gallery: [
         { label: "brand story", col: "span 1", row: "span 1", image: "assets/gallery-brand-shoot-v2.png", alt: "A product stylist arranging unbranded bottles on a dark campaign set" },
         { label: "behind the scenes", col: "span 1", row: "span 1", image: "assets/gallery-behind-scenes-v2.png", alt: "A camera and lighting setup in a moody content studio" },
