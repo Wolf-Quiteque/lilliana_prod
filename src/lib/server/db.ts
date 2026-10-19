@@ -70,4 +70,5 @@ export const col = {
   revisions: (db: Db) => db.collection<RevisionDoc>("revisions"),
   users: (db: Db) => db.collection<UserDoc>("users"),
   media: (db: Db) => db.collection<MediaDoc>("media"),
+  meta: (db: Db) => db.collection<{ _id: string; fingerprint?: string; at: Date }>("meta"),
 };

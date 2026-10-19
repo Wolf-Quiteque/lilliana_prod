@@ -7,6 +7,12 @@ The lillisproductions.com website plus a visual editor at `/admin`.
 - **Videos**: TikTok, Instagram, Facebook and YouTube links are turned into embeds. Uploaded videos are re-encoded in the browser (H.264/AAC MP4, 720p or 1080p) before going straight to Cloudflare R2, so a 15 MB phone clip ends up around 2–3 MB.
 - **Images**: shrunk in the browser, then converted to WebP on the server.
 
+## Admin password
+
+- **Change it:** in the editor, click the round account button (top right) or the **Account** tab → *Change password*. Every other signed-in device is signed out.
+- **Forgot it:** set a new `ADMIN_PASSWORD` (10+ characters) in the Vercel project settings and redeploy (or in `.env` locally). The first sign-in with the new value replaces the stored password. Setting the same value again does nothing, so a password changed in the editor stays in force.
+- Wrong passwords are limited to 8 attempts per 15 minutes per network.
+
 ## Run locally
 
 ```bash

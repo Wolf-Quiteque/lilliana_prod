@@ -10,6 +10,7 @@ export const POST = adminRoute(async (req, user) => {
   const password = typeof body.password === "string" && body.password ? body.password : undefined;
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error("That email address doesn't look right.");
   if (password && password.length < 10) throw new Error("Use at least 10 characters for the new password.");
+  if (password && password.length > 200) throw new Error("That password is too long.");
   if (!email && !password) throw new Error("Nothing to change.");
   const result = await changeCredentials(user.id, body.currentPassword, { email, password });
   if (!result.ok) throw new Error(result.error);

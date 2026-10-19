@@ -41,6 +41,13 @@ export function LoginForm() {
         <button type="submit" className="ed-btn ed-btn-primary" disabled={busy}>
           {busy ? "Signing in…" : "Sign in"}
         </button>
+        <details className="ed-hint">
+          <summary style={{ cursor: "pointer" }}>Forgot your password?</summary>
+          <p style={{ marginTop: 8 }}>
+            Ask whoever manages the website hosting to set a new <code>ADMIN_PASSWORD</code> in the Vercel project settings and redeploy. You can then sign in with that
+            password, and change it to your own from Account.
+          </p>
+        </details>
       </form>
     </main>
   );

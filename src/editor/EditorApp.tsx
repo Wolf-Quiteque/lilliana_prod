@@ -357,6 +357,17 @@ export function EditorApp({ initial, hasUnpublished: initialUnpublished, email }
             <a className="ed-btn ed-hide-sm" href="/" target="_blank" rel="noreferrer">
               View live site ↗
             </a>
+            <button
+              type="button"
+              className="ed-account-btn"
+              title={`Account — ${email} (change password, sign out)`}
+              onClick={() => {
+                setPanel("account");
+                setMobilePane("left");
+              }}
+            >
+              {email[0]}
+            </button>
             <button type="button" className="ed-btn ed-btn-publish" onClick={publish} disabled={publishing || (!unpublished && saveState === "saved")}>
               {publishing ? "Publishing…" : "Publish"}
               {unpublished && !publishing && <span className="ed-dot" />}

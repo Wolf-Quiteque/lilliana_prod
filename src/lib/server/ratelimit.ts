@@ -20,6 +20,13 @@ export async function rateLimit(key: string, limit: number, windowSeconds: numbe
   return true;
 }
 
+/** True while `key` has reached `limit` within its current window (does not count as an attempt) */
+export async function isLimited(key: string, limit: number): Promise<boolean> {
+  const db = await getDb();
+  const hit = await db.collection<Bucket>("ratelimits").findOne({ _id: key, expiresAt: { $gt: new Date() } });
+  return (hit?.count ?? 0) >= limit;
+}
+
 export function clientIp(req: Request): string {
   return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "unknown";
 }
