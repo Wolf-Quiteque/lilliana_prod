@@ -1,0 +1,605 @@
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/16852883-cec4-42f2-a02a-d362970a243f.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/20720776-24c7-45a7-ab16-92a86c3c8770.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/95077e0c-cf22-43b4-b982-83c2092c654b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/16852883-cec4-42f2-a02a-d362970a243f.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/20720776-24c7-45a7-ab16-92a86c3c8770.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/95077e0c-cf22-43b4-b982-83c2092c654b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/16852883-cec4-42f2-a02a-d362970a243f.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/20720776-24c7-45a7-ab16-92a86c3c8770.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/95077e0c-cf22-43b4-b982-83c2092c654b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/16852883-cec4-42f2-a02a-d362970a243f.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/20720776-24c7-45a7-ab16-92a86c3c8770.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/95077e0c-cf22-43b4-b982-83c2092c654b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/06f5c494-37b1-442e-a0d7-c20541804bc3.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/99060ad8-2b21-4549-ae9d-9baf45ce78d7.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/140a404b-b902-4f81-8168-7099cadfdd0c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/a24e5445-ef09-4447-8b33-eb89250ebfb2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/e290e99a-0adb-4be1-b11f-2f85518fd844.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/d801d71f-8f48-44fe-9b71-ec0451b14dcd.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/06f5c494-37b1-442e-a0d7-c20541804bc3.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/99060ad8-2b21-4549-ae9d-9baf45ce78d7.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/140a404b-b902-4f81-8168-7099cadfdd0c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/a24e5445-ef09-4447-8b33-eb89250ebfb2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/e290e99a-0adb-4be1-b11f-2f85518fd844.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/d801d71f-8f48-44fe-9b71-ec0451b14dcd.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/06f5c494-37b1-442e-a0d7-c20541804bc3.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/99060ad8-2b21-4549-ae9d-9baf45ce78d7.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/140a404b-b902-4f81-8168-7099cadfdd0c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/a24e5445-ef09-4447-8b33-eb89250ebfb2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/e290e99a-0adb-4be1-b11f-2f85518fd844.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/d801d71f-8f48-44fe-9b71-ec0451b14dcd.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/06f5c494-37b1-442e-a0d7-c20541804bc3.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/99060ad8-2b21-4549-ae9d-9baf45ce78d7.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/140a404b-b902-4f81-8168-7099cadfdd0c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/a24e5445-ef09-4447-8b33-eb89250ebfb2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/e290e99a-0adb-4be1-b11f-2f85518fd844.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/d801d71f-8f48-44fe-9b71-ec0451b14dcd.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/06f5c494-37b1-442e-a0d7-c20541804bc3.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/99060ad8-2b21-4549-ae9d-9baf45ce78d7.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/140a404b-b902-4f81-8168-7099cadfdd0c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/a24e5445-ef09-4447-8b33-eb89250ebfb2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/e290e99a-0adb-4be1-b11f-2f85518fd844.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/d801d71f-8f48-44fe-9b71-ec0451b14dcd.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ---- theme ---------------------------------------------------------------
+   Dark is the default (also without JavaScript); the inline script in the
+   layout sets data-theme before first paint. --accent comes from settings. */
+:root {
+  --bg: #0d0c0d; --surface: #171517; --surface2: #1f1c1f;
+  --line: rgba(255,255,255,0.10); --text: #f6f3f2; --muted: #a8a2a4;
+  --accent: #e13b82; --logo-filter: invert(1); --logo-blend: screen;
+  --featured-mix: 12%;
+}
+:root[data-theme="light"] {
+  --bg: #fffdfc; --surface: #f7f2f4; --surface2: #ece5e8;
+  --line: rgba(20,10,15,0.12); --text: #171316; --muted: #6d6469;
+  --logo-filter: none; --logo-blend: normal;
+  --featured-mix: 8%;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--text); }
+input, textarea, select, button { font: inherit; color: inherit; }
+::selection { background: var(--accent); color: #fff; }
+@keyframes lp-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* rich text: <em> is the accent highlight */
+.lp-rich em { font-style: normal; font-weight: 700; color: var(--accent); }
+.lp-rich a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* hover / focus states (inline styles win otherwise, hence !important) */
+.hv-text:hover { color: var(--text) !important; }
+.hv-accent:hover { color: var(--accent) !important; }
+.hv-invert:hover { background: var(--text) !important; color: var(--bg) !important; }
+.hv-invert-all:hover { background: var(--text) !important; color: var(--bg) !important; border-color: var(--text) !important; }
+.hv-outline:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+.hv-lift:hover { border-color: var(--accent) !important; transform: translateY(-4px); }
+.hv-border:hover { border-color: var(--accent) !important; }
+.hv-social:hover { border-color: var(--accent) !important; background: var(--accent) !important; color: #fff !important; }
+.fc:focus { border-color: var(--accent) !important; }
+
+/* header: links on wide screens, menu button on narrow ones */
+.lp-narrow-only { display: none !important; }
+.lp-theme-knob { left: 3px; }
+:root[data-theme="light"] .lp-theme-knob { left: 27px; }
+.lp-theme-sun { display: none; }
+:root[data-theme="light"] .lp-theme-sun { display: inline; }
+:root[data-theme="light"] .lp-theme-moon { display: none; }
+
+@media (max-width: 760px) {
+  .lp-wide-only { display: none !important; }
+  .lp-narrow-only { display: flex !important; }
+  html { scroll-padding-top: 76px; }
+  .lp-header-row { gap: 8px !important; padding: 12px 10px !important; flex-wrap: wrap !important; }
+  .lp-brand { gap: 10px !important; }
+  .lp-brand img { width: 40px !important; height: 40px !important; }
+  .lp-brand span { font-size: 16px !important; }
+  .lp-nav { gap: 8px !important; }
+  .lp-header-cta { padding: 10px 16px !important; font-size: 12.5px !important; }
+  .lp-menu-btn { width: 44px !important; height: 44px !important; min-width: 44px !important; }
+  .lp-menu-btn span { width: 16px !important; }
+}
+@media (max-width: 430px) {
+  .lp-brand span { display: none !important; }
+  .lp-brand img { width: 38px !important; height: 38px !important; }
+  .lp-header-cta { padding: 9px 14px !important; font-size: 12px !important; }
+  .lp-menu-btn { width: 42px !important; height: 42px !important; min-width: 42px !important; }
+}
+
+/* hero + client videos */
+.lp-hero-grid { display: flex; flex-direction: column; gap: 24px; }
+.lp-hero-copy { display: flex; flex-direction: column; gap: 18px; }
+.lp-reels { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: clamp(18px, 5vw, 28px); -webkit-overflow-scrolling: touch; padding-bottom: 6px; margin: 0 calc(-1 * clamp(18px, 5vw, 28px)); padding-left: clamp(18px, 5vw, 28px); padding-right: clamp(18px, 5vw, 28px); }
+.lp-reel { position: relative; flex: 0 0 min(62vw, 240px); width: min(62vw, 240px); aspect-ratio: 9 / 16; scroll-snap-align: start; }
+.lp-reel > iframe, .lp-reel > video, .lp-reel > .lp-reel-empty { display: block; width: 100%; height: 100%; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.lp-reel > video { object-fit: cover; }
+.lp-reel-empty { display: grid !important; place-items: center; padding: 18px; text-align: center; color: var(--muted); font-size: 13px; }
+.lp-meet { display: grid; gap: clamp(28px, 5vw, 64px); align-items: center; grid-template-columns: 1fr; }
+.lp-meet figure { max-width: 420px; width: 100%; }
+@media (min-width: 960px) {
+  .lp-hero-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); gap: 44px; align-items: center; }
+  .lp-reels { overflow: visible; margin: 0; padding: 0; }
+  .lp-reel { flex: 1 1 0; min-width: 0; width: auto; }
+  .lp-meet { grid-template-columns: minmax(0, 420px) 1fr; }
+}
+
+/* Intro loader — "on set": a 9:16 reel frame with REC timecode, spinning aperture, scrub and services marquee. */
+    #lp-loader {
+      position: fixed; inset: 0; z-index: 10000;
+      background: #0d0c0d;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 20px; padding: 20px;
+      opacity: 1;
+      transition: opacity .45s ease;
+    }
+    #lp-loader.__lp_done { opacity: 0; pointer-events: none; }
+
+    .__lp_glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(circle at 50% 42%, rgba(225,59,130,.16) 0%, rgba(225,59,130,.05) 34%, transparent 68%);
+    }
+    .__lp_grain {
+      position: absolute; inset: 0; pointer-events: none; opacity: .05;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+      animation: __lp_flicker 1.6s steps(2) infinite;
+    }
+    #lp-loader::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 50% 42%, transparent 58%, rgba(0,0,0,.4) 100%);
+    }
+    @keyframes __lp_flicker { 0%, 100% { opacity: .04; } 50% { opacity: .08; } }
+
+    /* the 9:16 phone / reel frame */
+    .__lp_frame {
+      width: min(170px, 46vw); aspect-ratio: 9 / 16;
+      border: 1.5px solid rgba(255,255,255,.16); border-radius: 22px;
+      background: linear-gradient(180deg, #131114 0%, #0a090a 60%, #131114 100%);
+      box-shadow: 0 0 0 1px rgba(225,59,130,.25), 0 24px 60px rgba(0,0,0,.5), 0 0 46px rgba(225,59,130,.18);
+      overflow: hidden; position: relative;
+    }
+    .__lp_frame_top {
+      position: absolute; top: 0; left: 0; right: 0; height: 34px; z-index: 2;
+      display: flex; align-items: center; gap: 6px; padding: 0 10px;
+      background: linear-gradient(180deg, rgba(17,16,19,.94), rgba(17,16,19,0));
+      font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 10px; font-weight: 700; letter-spacing: .14em; color: #fff;
+    }
+    .__lp_dot { width: 8px; height: 8px; border-radius: 50%; background: #ff3b30; box-shadow: 0 0 0 3.5px rgba(255,59,48,.22); animation: __lp_blink 1.1s steps(2) infinite; flex: none; }
+    @keyframes __lp_blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: .25; } }
+    .__lp_rec { color: #ff6b64; letter-spacing: .18em; }
+    .__lp_tc { margin-left: auto; color: rgba(255,255,255,.6); }
+
+    /* camera aperture + monogram */
+    .__lp_lens { position: absolute; left: 50%; top: 47%; width: min(148px, 82%); aspect-ratio: 1; transform: translate(-50%, -50%); z-index: 1; display: grid; place-items: center; }
+    .__lp_a1 {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 2px dashed rgba(225,59,130,.5);
+      animation: __lp_spin 4.2s linear infinite;
+    }
+    .__lp_a2 {
+      position: absolute; width: 132px; height: 132px; border-radius: 50%;
+      border: 3px solid transparent; border-top-color: rgba(225,59,130,.85); border-right-color: rgba(225,59,130,.85);
+      animation: __lp_spin 1.9s linear infinite reverse;
+    }
+    .__lp_a3 {
+      position: absolute; width: 92px; height: 92px; border-radius: 50%;
+      border: 3px solid transparent; border-bottom-color: rgba(255,255,255,.5); border-left-color: rgba(255,255,255,.24);
+      animation: __lp_spin 1.3s linear infinite;
+    }
+    .__lp_mono {
+      width: 64px; height: 64px; border-radius: 18px;
+      background: rgba(225,59,130,.12); border: 1px solid rgba(225,59,130,.5);
+      display: grid; place-items: center;
+      font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 26px; font-weight: 700; color: #e13b82;
+      animation: __lp_throb 1.4s ease-in-out infinite;
+    }
+    @keyframes __lp_spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes __lp_throb {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 18px rgba(225,59,130,.25); }
+      50%      { transform: scale(1.06); box-shadow: 0 0 34px rgba(225,59,130,.5); }
+    }
+
+    /* record progress scrub — width driven by real unpack progress via JS */
+    .__lp_scrub {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 26px; z-index: 2;
+      background: linear-gradient(0deg, rgba(17,16,19,.94), rgba(17,16,19,0));
+      padding: 0 8px 7px;
+    }
+    .__lp_scrub_track { position: relative; height: 3px; border-radius: 99px; background: rgba(255,255,255,.14); }
+    .__lp_scrub_fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0%; border-radius: 99px; background: linear-gradient(90deg, rgba(225,59,130,.55), #e13b82 55%, #ff5fa0); }
+    .__lp_scrub_thumb { position: absolute; top: -3px; left: 0%; width: 11px; height: 11px; border-radius: 50%; background: #fff; border: 2px solid #e13b82; box-shadow: 0 1px 6px rgba(0,0,0,.5); }
+
+    /* services marquee */
+    .__lp_marquee { width: min(340px, 92vw); height: 18px; overflow: hidden; position: relative; }
+    .__lp_marquee_inner { display: inline-block; white-space: nowrap; font-size: 0; will-change: transform; animation: __lp_marquee_key 26s linear infinite; }
+    .__lp_half { display: inline-block; text-transform: uppercase; font-size: 10px; letter-spacing: .22em; color: #a8a2a4; white-space: nowrap; }
+    .__lp_mq_dot { display: inline-block; color: #e13b82; font-size: 8px; margin: 0 8px; }
+    @keyframes __lp_marquee_key { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* status + brand */
+    .__lp_status_row { display: flex; align-items: center; gap: 10px; }
+    .__lp_status_text { font-size: 12.5px; color: #f6f3f2; letter-spacing: .04em; }
+    .__lp_pct { min-width: 40px; text-align: right; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; color: rgba(225,59,130,.9); }
+    .__lp_brand { display: flex; align-items: center; gap: 9px; font-size: 12px; letter-spacing: .14em; color: #f6f3f2; }
+    .__lp_brand::before { content: ""; width: 20px; height: 1.5px; background: #e13b82; }
+
+    /* short screens (landscape phones, tiny windows) */
+    @media (max-height: 520px) {
+      .__lp_frame { width: 112px; }
+      .__lp_a2 { width: 96px; height: 96px; }
+      .__lp_a3 { width: 66px; height: 66px; }
+      .__lp_mono { width: 48px; height: 48px; font-size: 20px; }
+      .__lp_brand { display: none; }
+      .__lp_grain, .__lp_glow { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .__lp_a1, .__lp_a2, .__lp_a3, .__lp_mono, .__lp_grain, .__lp_dot, .__lp_marquee_inner { animation: none; }
+    }
+#lp-loader { font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+/* ---- editor canvas only ---------------------------------------------------- */
+.lp-editing [data-edit-path] { cursor: text; outline: 1px dashed transparent; outline-offset: 3px; transition: outline-color .12s; }
+.lp-editing img[data-edit-path], .lp-editing [data-edit-kind="image"], .lp-editing [data-edit-kind="video"] { cursor: pointer; }
+.lp-editing [data-edit-path]:hover { outline-color: color-mix(in oklab, #4f8cff 70%, transparent); }
+.lp-editing [data-edit-path]:focus { outline: 2px solid #4f8cff; }
+.lp-editing .lp-selected { outline: 2px solid #4f8cff !important; outline-offset: 3px; }
+.lp-editing [contenteditable]:empty::before { content: attr(data-placeholder); opacity: .45; }
+.lp-edit-catch { position: absolute; inset: 0; z-index: 2; border-radius: 18px; cursor: pointer; background: transparent; border: 0; padding: 0; }
+.lp-edit-catch:hover { background: rgba(79,140,255,.12); }
+.lp-editing [data-hidden-section] { opacity: .35; }
+.lp-rich i { font-style: normal; font-weight: 700; color: var(--accent); }
+.lp-rich b { font-weight: 700; }
+/* Failsafe: the loader always gets out of the way, even if scripts never run */
+#lp-loader { animation: lp-loader-out .45s ease 5s forwards; }
+@keyframes lp-loader-out { to { opacity: 0; visibility: hidden; pointer-events: none; } }

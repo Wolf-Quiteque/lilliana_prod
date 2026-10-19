@@ -1,0 +1,12 @@
+/* Floating controls inside the editor preview. Neutral colours so they never read as part of the site. */
+.lp-canvas-ui { position: fixed; inset: 0; pointer-events: none; z-index: 2147483000; font: 500 12px/1 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.lp-canvas-ui > * { pointer-events: auto; }
+.lp-cv-chip { position: fixed; }
+.lp-cv-chip button { background: #1d4ed8; color: #fff; border: 0; border-radius: 6px; padding: 6px 9px; font: inherit; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+.lp-cv-chip button:hover { background: #1e40af; }
+.lp-cv-tools { position: fixed; display: flex; gap: 2px; padding: 3px; background: #111827; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+.lp-cv-tools button { min-width: 28px; height: 26px; padding: 0 7px; border: 0; border-radius: 5px; background: transparent; color: #f9fafb; font: inherit; font-size: 13px; cursor: pointer; }
+.lp-cv-tools button:hover { background: #374151; }
+.lp-cv-tools button.danger:hover { background: #b91c1c; }
+.lp-cv-rich { align-items: center; }
+.lp-cv-hint { color: #9ca3af; padding: 0 8px 0 6px; font-size: 11px; white-space: nowrap; }
