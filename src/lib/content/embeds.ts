@@ -34,8 +34,10 @@ export function parseVideoUrl(raw: string): ParsedVideo | null {
   const url = u.toString();
 
   if (host === "tiktok.com" || host.endsWith(".tiktok.com")) {
-    const id = u.pathname.match(/\/(?:video|photo|embed\/v2|embed|v)\/(\d{8,25})/)?.[1];
-    return id ? { kind: "tiktok", url, embed: `https://www.tiktok.com/embed/v2/${id}` } : null;
+    const id = u.pathname.match(/\/(?:video|photo|embed\/v2|embed|player\/v1|v)\/(\d{8,25})/)?.[1];
+    // The "embed player" is a plain video player that fills any box, unlike the fixed-width
+    // embed/v2 card (which crops and looks zoomed in narrow cards).
+    return id ? { kind: "tiktok", url, embed: `https://www.tiktok.com/player/v1/${id}?${TIKTOK_PLAYER_PARAMS}` } : null;
   }
 
   if (host === "youtube.com" || host === "youtu.be" || host === "youtube-nocookie.com") {
@@ -59,17 +61,45 @@ export function parseVideoUrl(raw: string): ParsedVideo | null {
     const isVideo = /\/(videos|reel|watch|share\/v|share\/r)\b/.test(u.pathname) || u.searchParams.has("v") || host === "fb.watch";
     if (!isVideo) return null;
     const href = encodeURIComponent(url);
+    const { w, h } = EMBED_FRAME.facebook!;
     return {
       kind: "facebook",
       url,
-      embed: `https://www.facebook.com/plugins/video.php?href=${href}&show_text=false&width=500`,
+      embed: `https://www.facebook.com/plugins/video.php?href=${href}&show_text=false&width=${w}&height=${h}&t=0`,
     };
   }
 
   return null;
 }
 
+const TIKTOK_PLAYER_PARAMS = [
+  "controls=1",
+  "progress_bar=1",
+  "play_button=1",
+  "volume_control=1",
+  "fullscreen_button=1",
+  "timestamp=0",
+  "loop=1",
+  "music_info=0",
+  "description=0",
+  "rel=0",
+  "native_context_menu=0",
+  "closed_caption=0",
+].join("&");
+
+/**
+ * Platforms whose embed has a fixed layout. Their iframe is drawn at this natural size and scaled
+ * down as a whole to fit the card, so nothing is cropped or zoomed. Platforms not listed here
+ * (TikTok player, YouTube) resize themselves and simply fill the card.
+ */
+export const EMBED_FRAME: Partial<Record<VideoKind, { w: number; h: number }>> = {
+  facebook: { w: 267, h: 476 },
+  // Header + 4:5 video + likes/comment bar, as measured from Instagram's own MEASURE message
+  instagram: { w: 328, h: 618 },
+};
+
 const EMBED_PREFIXES = [
+  "https://www.tiktok.com/player/v1/",
   "https://www.tiktok.com/embed/v2/",
   "https://www.youtube-nocookie.com/embed/",
   "https://www.instagram.com/",

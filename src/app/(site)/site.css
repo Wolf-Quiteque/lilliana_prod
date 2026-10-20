@@ -461,8 +461,14 @@ input, textarea, select, button { font: inherit; color: inherit; }
 .lp-hero-copy { display: flex; flex-direction: column; gap: 18px; }
 .lp-reels { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: clamp(18px, 5vw, 28px); -webkit-overflow-scrolling: touch; padding-bottom: 6px; margin: 0 calc(-1 * clamp(18px, 5vw, 28px)); padding-left: clamp(18px, 5vw, 28px); padding-right: clamp(18px, 5vw, 28px); }
 .lp-reel { position: relative; flex: 0 0 min(62vw, 240px); width: min(62vw, 240px); aspect-ratio: 9 / 16; scroll-snap-align: start; }
-.lp-reel > iframe, .lp-reel > video, .lp-reel > .lp-reel-empty { display: block; width: 100%; height: 100%; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
-.lp-reel > video { object-fit: cover; }
+.lp-reel > iframe, .lp-reel > video, .lp-reel > .lp-reel-empty, .lp-reel > .lp-reel-box { display: block; width: 100%; height: 100%; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+/* Whole video always visible: vertical clips fill the card, landscape ones get bars instead of being cropped */
+.lp-reel > video { object-fit: contain; background: #000; }
+.lp-reel > iframe { overflow: hidden; }
+.lp-reel-box { position: relative; overflow: hidden; }
+.lp-reel-box > iframe { position: absolute; top: 0; left: 0; display: block; border: 0; max-width: none; }
+.lp-reel-wide { display: flex !important; align-items: center; background: #000 !important; }
+.lp-reel-wide > iframe { position: static; width: 100%; height: auto; aspect-ratio: 16 / 9; }
 .lp-reel-empty { display: grid !important; place-items: center; padding: 18px; text-align: center; color: var(--muted); font-size: 13px; }
 .lp-meet { display: grid; gap: clamp(28px, 5vw, 64px); align-items: center; grid-template-columns: 1fr; }
 .lp-meet figure { max-width: 420px; width: 100%; }

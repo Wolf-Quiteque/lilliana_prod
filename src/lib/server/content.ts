@@ -23,7 +23,7 @@ export const getPublishedContent = unstable_cache(
       return DEFAULT_CONTENT;
     }
   },
-  ["published-content"],
+  ["published-content", "embeds-v2"],
   { tags: ["content"], revalidate: 3600 },
 );
 
