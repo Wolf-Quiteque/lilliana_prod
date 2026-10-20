@@ -563,7 +563,7 @@ function Contact() {
             </label>
             <label style={label}>
               <T p="contact.form.emailLabel" />
-              <input name="email" type="email" required placeholder={f.emailPlaceholder} className="fc" style={field} />
+              <input name="email" type="text" inputMode="email" autoComplete="email" autoCapitalize="none" required placeholder={f.emailPlaceholder} className="fc" style={field} />
             </label>
           </div>
           <div style={twoCol}>
