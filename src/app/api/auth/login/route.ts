@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   try {
     const { email, password } = (await req.json().catch(() => ({}))) as { email?: string; password?: string };
     if (typeof email !== "string" || typeof password !== "string" || !email || !password) {
-      return NextResponse.json({ error: "Enter your email and password." }, { status: 400 });
+      return NextResponse.json({ error: "Enter your email (or username) and password." }, { status: 400 });
     }
     // Only failed attempts count, so signing in and out normally never locks anyone out
     const key = `login:${clientIp(req)}`;
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     const user = await verifyLogin(email.slice(0, 200), password.slice(0, 200));
     if (!user) {
       await rateLimit(key, MAX_FAILURES, WINDOW);
-      return NextResponse.json({ error: "That email and password don't match." }, { status: 401 });
+      return NextResponse.json({ error: "That email/username and password don't match." }, { status: 401 });
     }
     await createSession(user);
     await ensureSeeded();

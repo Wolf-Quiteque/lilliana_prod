@@ -8,7 +8,8 @@ export const POST = adminRoute(async (req, user) => {
   if (typeof body.currentPassword !== "string" || !body.currentPassword) throw new Error("Enter your current password.");
   const email = typeof body.email === "string" && body.email.trim() ? body.email.trim() : undefined;
   const password = typeof body.password === "string" && body.password ? body.password : undefined;
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error("That email address doesn't look right.");
+  // Any email or username works; it only has to be something you can type at the sign-in screen
+  if (email && (email.length < 3 || email.length > 200 || /\s/.test(email))) throw new Error("Use at least 3 characters and no spaces.");
   if (password && password.length < 10) throw new Error("Use at least 10 characters for the new password.");
   if (password && password.length > 200) throw new Error("That password is too long.");
   if (!email && !password) throw new Error("Nothing to change.");

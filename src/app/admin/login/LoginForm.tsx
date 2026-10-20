@@ -30,8 +30,8 @@ export function LoginForm() {
         <h1>Edit your website</h1>
         <p>Sign in to change text, photos and videos on lillisproductions.com.</p>
         <label className="ed-field">
-          <span className="ed-label">Email</span>
-          <input className="ed-input" type="email" autoComplete="username" required value={email} onChange={(e) => setEmail(e.target.value)} autoFocus />
+          <span className="ed-label">Email or username</span>
+          <input className="ed-input" type="text" inputMode="email" autoCapitalize="none" autoCorrect="off" spellCheck={false} autoComplete="username" required value={email} onChange={(e) => setEmail(e.target.value)} autoFocus />
         </label>
         <label className="ed-field">
           <span className="ed-label">Password</span>

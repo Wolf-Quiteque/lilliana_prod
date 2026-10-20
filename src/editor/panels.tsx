@@ -170,7 +170,7 @@ function EmailForm({ onChanged }: { onChanged: (email: string) => void }) {
     try {
       await api("/api/admin/account", { method: "POST", json: { currentPassword: current, email: newEmail } });
       onChanged(newEmail.trim().toLowerCase());
-      setMsg({ ok: true, text: "Saved. Use the new email next time you sign in." });
+      setMsg({ ok: true, text: "Saved. Use it next time you sign in." });
       setNewEmail("");
       setCurrent("");
     } catch (err) {
@@ -183,12 +183,12 @@ function EmailForm({ onChanged }: { onChanged: (email: string) => void }) {
   return (
     <details className="ed-card">
       <summary className="ed-group-title" style={{ cursor: "pointer" }}>
-        Change sign-in email
+        Change sign-in email or username
       </summary>
       <form className="ed-stack" onSubmit={submit}>
         <label className="ed-field">
-          <span className="ed-label">New email</span>
-          <input className="ed-input" type="email" required value={newEmail} onChange={(e) => setNewEmail(e.target.value)} autoComplete="email" />
+          <span className="ed-label">New email or username</span>
+          <input className="ed-input" type="text" inputMode="email" autoCapitalize="none" autoCorrect="off" spellCheck={false} required value={newEmail} onChange={(e) => setNewEmail(e.target.value)} autoComplete="username" />
         </label>
         <label className="ed-field">
           <span className="ed-label">Current password</span>

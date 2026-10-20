@@ -38,7 +38,15 @@ export async function createSession(user: Pick<UserDoc, "_id" | "sessionVersion"
 }
 
 export async function destroySession() {
-  (await cookies()).delete(COOKIE);
+  // Must repeat Secure/Path: browsers ignore any change to a __Host- cookie without them,
+  // so a plain delete() would leave the visitor signed in.
+  (await cookies()).set(COOKIE, "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    path: "/",
+    maxAge: 0,
+  });
 }
 
 export async function getCurrentUser(): Promise<SessionUser | null> {
